@@ -1,0 +1,19 @@
+set daemon  30              # check services at 30 seconds intervals
+set logfile syslog
+
+set httpd port 2812 and
+    SSL ENABLE
+    PEMFILE /var/certs/monit.pem
+    #use address 0.0.0.0   # only accept connection from localhost
+    allow 10.1.0.0/16    # allow localhost to connect to the server and
+    allow admin:monit      # require user 'admin' with password 'monit'
+
+    check system localhost
+    if loadavg (1min) > 10 then alert
+    if loadavg (5min) > 6 then alert
+    if memory usage > 80% then alert
+    if cpu usage (user) > 80% then alert
+    if cpu usage (system) > 60% then alert
+    if cpu usage (wait) > 75% then alert
+
+include /etc/monit.d/*
