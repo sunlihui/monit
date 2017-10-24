@@ -1,6 +1,6 @@
-check process callback with pidfile /var/run/callback.pid
-        start program = "/opt/shells/callback.sh start"
-        stop program = "/opt/shells/callback.sh stop"
+check process program with pidfile /var/run/program.pid
+        start program = "/etc/monit.d/program.sh start"
+        stop program = "/etc/monit.d/program.sh stop"
         if cpu > 40% for 1 cycles then restart
 	if memory usage > 40% for 1 cycles then restart
 	if failed host 172.16.20.15 port 19999 protocol http and request "/admin/env" then restart

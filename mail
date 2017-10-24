@@ -1,13 +1,13 @@
-    set mailserver  smtp.126.com  username "" password ""
-    set mailserver  smtp.qq.com  username "" password ""
+    set mailserver  smtp.126.com  username "tuhu_monitor" password "Tuhumima123"
+    set mailserver  smtp.qq.com  username "2881030847" password "1234qweR"
     set mail-format {
-     from: *@126.com
+     from: tuhu_monitor@126.com
      subject: $SERVICE $EVENT at $DATE on $HOST
      message: Monit $ACTION $SERVICE $EVENT at $DATE on $HOST : $DESCRIPTION.
            Yours sincerely,
               Monit
       }
-    set alert *@qq.com
+    set alert 2881030847@qq.com
 
     set idfile /var/monit/id
     set eventqueue
