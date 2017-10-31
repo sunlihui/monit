@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR=/tuhu/hi.tuhu.com/tuhu_collector
+DIR=
 PROGRAM=Launcher
 cd ${DIR}
 #mvn clean install -DskipTests
@@ -8,7 +8,7 @@ export MAVEN_OPTS="-Xms2048m -Xmx2048m -Xmn800m -XX:MaxMetaspaceSize=256m -Xss25
 
 case $1 in 
 start)
-nohup mvn jetty:run -Dip=10.1.74.20 >>logs/collector.log 2>&1 &
+nohup mvn jetty:run -Dip=* >>logs/collector.log 2>&1 &
 sleep 1
 PID=`/usr/bin/jps |grep $PROGRAM|cut -d" " -f1`
 echo $PID >/var/run/java.pid
