@@ -1,7 +1,7 @@
-    set mailserver  smtp.126.com  username "tuhu_monitor" password "Tuhumima123"
-    set mailserver  smtp.qq.com  username "2881030847" password "1234qweR"
+    set mailserver  smtp.126.com  username "" password ""
+    set mailserver  smtp.qq.com  username "" password ""
     set mail-format {
-     from: tuhu_monitor@126.com
+     from: test@126.com
      subject: $SERVICE $EVENT at $DATE on $HOST
      message: Monit $ACTION $SERVICE $EVENT at $DATE on $HOST : $DESCRIPTION.
            Yours sincerely,
