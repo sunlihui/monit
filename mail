@@ -7,7 +7,7 @@
            Yours sincerely,
               Monit
       }
-    set alert 2881030847@qq.com
+    set alert *@qq.com
 
     set idfile /var/monit/id
     set eventqueue

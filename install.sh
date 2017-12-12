@@ -1,5 +1,5 @@
 #!/bin/bash
-#Install monit,created by SunLihui @2017-10-24 in tuhu
+#Install monit,created by SunLihui @2017-10-24
 
 yum install -y epel-release && yum install -y monit
 VERSION=`cat /etc/redhat-release |cut -d'.' -f1|awk '{print $NF}'`
