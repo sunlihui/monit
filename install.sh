@@ -32,7 +32,7 @@ cp monit.pem /var/certs
 chmod 0400 /var/certs/monit.pem
 mkdir /var/monit
 
-moint -t && systemctl start monit
+monit -t && systemctl start monit
 
 else 
 echo "System unknow,will quit........"
