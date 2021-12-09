@@ -1,0 +1,5 @@
+check host coredns with address localhost
+	start program "/usr/bin/systemctl start coredns"
+	stop program "/usr/bin/systemctl stop coredns"
+	if failed port 8080 protocol http and request /health with content ="OK"
+	then restart
